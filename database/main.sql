@@ -7,15 +7,6 @@ CREATE TABLE sensor_data (
     irrigation_needed VARCHAR2(20)
 );
 
-INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed)
-VALUES ('Wheat', 22, 30, 'Yes');
-
-INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed)
-VALUES ('rice', 25, 40, 'No');
-
-INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed)
-VALUES ('corn', 30, 20, 'Yes');
-
-
-
 SELECT * FROM sensor_data;
+
+COMMIT;
