@@ -7,6 +7,20 @@ CREATE TABLE sensor_data (
     irrigation_needed VARCHAR2(20)
 );
 
+-- Insert sample data with varying values to simulate real sensor readings
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Wheat', 27, 55, 'Yes');
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Rice', 32, 75, 'Yes');
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Sugarcane', 30, 70, 'Yes');
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Maize', 29, 60, 'No');
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Mustard', 24, 50, 'Yes');
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Cotton', 34, 65, 'Yes');
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Potato', 22, 55, 'Yes');
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Barley', 26, 50, 'Yes');
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Chickpea', 27, 45, 'Yes');
+INSERT INTO sensor_data (crop_type, temperature, soil_moisture, irrigation_needed) VALUES ('Soybean', 30, 60, 'No');
+
 SELECT * FROM sensor_data;
+
+DROP TABLE sensor_data;
 
 COMMIT;

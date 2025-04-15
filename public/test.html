@@ -4,13 +4,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sample Data</title>
+  <title>Crop Analysis</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px;
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: white;
+    }
+
+    #analyze-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 0 auto 2rem;
+    }
+
+    #analyze-btn:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    .loading {
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ecf0f1;
+    }
+
+    th {
+      background: #3498db;
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background: #f8f9fa;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Status indicator styles */
+    .optimal {
+      color: #27ae60;
+      font-weight: 600;
+    }
+
+    .below-optimal {
+      color: #e74c3c;
+      font-weight: 600;
+    }
+
+    .above-optimal {
+      color: #f39c12;
+      font-weight: 600;
+    }
+
+    .needs-irrigation {
+      color: #e74c3c;
+      font-weight: 600;
+    }
+
+    .no-irrigation {
+      color: #27ae60;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>Sample Data</h1>
-    <button id="analyze-btn">Start Analyzing</button>
+    <h1>Crop Analysis</h1>
+    
+    <div class="form-group">
+      <label for="crop-select">Select Crop Type:</label>
+      <select id="crop-select">
+        <option value="">-- Select a crop --</option>
+        <option value="wheat">Wheat</option>
+        <option value="rice">Rice</option>
+        <option value="sugarcane">Sugarcane</option>
+        <option value="maize">Maize</option>
+        <option value="mustard">Mustard</option>
+        <option value="cotton">Cotton</option>
+        <option value="potato">Potato</option>
+        <option value="barley">Barley</option>
+        <option value="chickpea">Chickpea</option>
+        <option value="soybean">Soybean</option>
+      </select>
+    </div>
+
+    <button id="analyze-btn">Analyze Crop Requirements</button>
 
     <div class="loading" id="loading" style="display: none;">Loading...</div>
 
@@ -18,8 +182,10 @@
       <thead>
         <tr>
           <th>Crop Type</th>
-          <th>Temperature (°C)</th>
-          <th>Soil Moisture (%)</th>
+          <th>Optimal Temperature (°C)</th>
+          <th>Optimal Soil Moisture (%)</th>
+          <th>Current Temperature (°C)</th>
+          <th>Current Soil Moisture (%)</th>
           <th>Irrigation Needed</th>
         </tr>
       </thead>
