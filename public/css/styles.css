@@ -1,0 +1,11 @@
+/* styles.css */
+@import url('base/base.css');
+@import url('components/header.css');
+@import url('components/footer.css');
+@import url('components/overlay.css');
+@import url('components/button.css');
+@import url('sections/hero.css');
+@import url('sections/about.css');
+@import url('sections/features.css');
+@import url('sections/gallery.css');
+@import url('sections/contact.css');

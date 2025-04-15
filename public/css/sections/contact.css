@@ -1,0 +1,39 @@
+.contact {
+    padding: 50px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* .contact form { */
+    /* min-width: 600px; */
+    /* margin: auto; */
+/* } */
+
+.contact form input,
+.contact form textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.contact form button {
+    background: #77aaff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    margin: 0 auto; /* Center the button */
+    display: block; /* Ensure it takes its own line */
+}
+
+.contact form button:hover{
+    background: #ff7f50;
+}

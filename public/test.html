@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Data</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sample Data</h1>
+    <button id="analyze-btn">Start Analyzing</button>
+
+    <div class="loading" id="loading" style="display: none;">Loading...</div>
+
+    <table id="data-table" style="display: none;">
+      <thead>
+        <tr>
+          <th>Crop Type</th>
+          <th>Temperature (°C)</th>
+          <th>Soil Moisture (%)</th>
+          <th>Irrigation Needed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="js/adddata.js"></script>
+</body>
+
+</html>
